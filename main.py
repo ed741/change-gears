@@ -86,17 +86,17 @@ def printOption(option):
 def id(x): return x
 def fromTPI(tpi, converstionFunc=id, unit="tpi"):
     if len(TPIcombinations[tpi]) > 0:
-        for option in TPIcombinations[tpi]:
+        for option in sorted(TPIcombinations[tpi], reverse=True):
             print("\t", printOption(option))
     else:
         lower, upper = findTPI(tpi)
         if lower is not None:
             print("closet Lower : {}{} \t error: {}%".format(converstionFunc(lower[0]), unit, 100 * abs(converstionFunc(tpi) - converstionFunc(lower[0])) / converstionFunc(tpi)))
-            for option in lower[1]:
+            for option in sorted(lower[1], reverse=True):
                 print("\t", printOption(option))
         if upper is not None:
             print("closet Higher: {}{} \t error: {}%".format(converstionFunc(upper[0]), unit, 100 * abs(converstionFunc(tpi) - converstionFunc(upper[0])) / converstionFunc(tpi)))
-            for option in upper[1]:
+            for option in sorted(upper[1], reverse=True):
                 print("\t", printOption(option))
 
 def search():
