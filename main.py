@@ -131,7 +131,7 @@ def search():
         tpi = (25.4/mod)/math.pi
         print("Finding {}metric module".format(mod))
         print("Finding {} tpi".format(tpi))
-        fromTPI(tpi, converstionFunc=lambda tpi: 25.4/(tpi*math.pi), unit="dp")
+        fromTPI(tpi, converstionFunc=lambda tpi: 25.4/(tpi*math.pi), unit="mod")
 
 
 # Press the green button in the gutter to run the script.
